@@ -1,0 +1,43 @@
+vm.items = [ 
+    {
+        "itemNumber": "1.1",
+        "itemDesc": "swab",
+        "itemVolume": "",
+        "caseKey": 100,
+        "itemSource": "Evidence",
+        "ECN":  250
+    },
+    {
+        "itemNumber": "1.2",
+        "itemDesc": "snippet",
+        "itemVolume": "",
+        "caseKey": 100,
+        "itemSource": "Evidence",
+        "ECN":  251     
+    },
+    {
+        "itemNumber": "3",
+        "itemDesc": "swab",
+        "itemVolume": "",
+        "caseKey": 100,
+        "itemSource": "Known",
+        "ECN":  254
+    },
+    {
+        "itemNumber": "2.1",
+        "itemDesc": "buccal",
+        "itemVolume": "",
+        "caseKey": 100,
+        "itemSource": "Evidence",
+        "ECN":  255
+    }
+]
+
+vm.flags = [
+    {
+        
+    },
+    {
+        
+    }
+]

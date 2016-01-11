@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <!-- Style sheets -->   
+  <link rel="stylesheet" href="lib\bootstrap\dist\css\bootstrap.css">
+  <link rel="stylesheet" href="css\app.css">
+  <!-- library scripts -->
+  <script src="lib\angular\angular.js"></script>
+  <script src="lib\jquery\dist\jquery.js"></script>
+  <script src="lib\bootstrap\dist\js\bootstrap.js"></script>
+  
+   <!-- modules  -->
+   <script src="app/app.js"></script>
+   
+   <!-- Controllers -->
+   <script src="app/items/itemsCtrl.js"></script>
+   
+ </head>
+ <body ng-app="msbItems">
+     <div ng-controller="ItemsCtrl as vm"> 
+       <div class="panel panel-primary">
+          <div class="panel panel-heading" style="font-size:large" >{{vm.title}}</div>
+          <div class="panel-body">
+          <table class="table">
+              <thead>
+                  <td> <button type="button" ng-click="vm.showImage()" >image </button> </td>
+                  <td>Item Number</td>
+                  <td>Description</td>
+              </thead>
+              <tbody>
+                  <tr ng-repeat = "item in vm.items">
+                      <td> </td>
+                      <td> {{item.itemNumber}}</td>
+                      <td>{{item.itemDesc}}</td>
+                      
+                  </tr>
+              </tbody>
+           </table>   
+           </div>
+         </div>
+     </div>
+ </body>   
+ 
+
+</html>
