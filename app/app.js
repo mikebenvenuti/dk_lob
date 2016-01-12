@@ -1,5 +1,6 @@
 (function () {
     "use strict";
     
-    var app = angular.module("msbItems", []);
+    angular
+       .module("msbItems", ["common.services","itemResourceMock"]);
 }());

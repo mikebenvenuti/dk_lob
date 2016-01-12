@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <!-- this is a test --> 
+   
   <!-- Style sheets -->   
   <link rel="stylesheet" href="lib\bootstrap\dist\css\bootstrap.css">
   <link rel="stylesheet" href="css\app.css">
   <!-- library scripts -->
   <script src="lib\angular\angular.js"></script>
+  <script src="lib\angular-resource\angular-resource.js"></script>
+  <script src="lib\angular-mocks\angular-mocks.js"></script>
   <script src="lib\jquery\dist\jquery.js"></script>
   <script src="lib\bootstrap\dist\js\bootstrap.js"></script>
   
@@ -16,6 +18,10 @@
    <!-- Controllers -->
    <script src="app/items/itemsCtrl.js"></script>
    
+   <!-- Services -->
+   <script src="common/services/common.services.js"></script>
+   <script src="common/services/itemResource.js"></script>
+   <script src="common/services/itemResourceMock.js"></script>
  </head>
  <body ng-app="msbItems">
      <div ng-controller="ItemsCtrl as vm"> 
