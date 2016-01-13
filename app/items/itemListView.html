@@ -4,7 +4,7 @@
           <div class="panel-body">
           <table class="table">
               <thead>
-                  <td> <button type="button" ng-click="vm.showImage()" >image </button> </td>
+                  <td> <button class="btn btn-primary  btn-sm" type="button" ng-click="vm.showImage()" >image </button> </td>
                   <td>Item Number</td>
                   <td>Description</td>
               </thead>
@@ -12,7 +12,7 @@
                   <tr ng-repeat = "item in vm.items">
                       <td> </td>
                       <td> {{item.itemNumber}}</td>
-                      <td>{{item.itemDesc}}</td>
+                      <td> {{item.itemDesc}}</td>
                       
                   </tr>
               </tbody>

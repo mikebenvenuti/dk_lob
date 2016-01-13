@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="css\app.css">
   <!-- library scripts -->
   <script src="lib\angular\angular.js"></script>
-  <script src="lib\angular-resource\angular-resource.js"></script>
+  <script src="lib\jquery\dist\jquery.js"></script>
   <script src="lib\angular-ui-router\release\angular-ui-router.js"></script>
   <script src="lib\angular-mocks\angular-mocks.js"></script>
-  <script src="lib\jquery\dist\jquery.js"></script>
+  <script src="lib\angular-resource\angular-resource.js"></script>
   <script src="lib\bootstrap\dist\js\bootstrap.js"></script>
   
    <!-- modules  -->
@@ -24,33 +24,45 @@
    <script src="common/services/itemResource.js"></script>
    <script src="common/services/itemResourceMock.js"></script>
  </head>
+ 
+ 
+ 
  <body ng-app="msbItems">
      <div class="container">
+         
+         
+        <!--
+            
+             nav.navbar.navbar-inverse>div.container>a.navbar-brand{Acme Product Mangament}^div.navbar-header --> 
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <a ui-sref="home" class="navbar-brand">Acme Product Mangament</a>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle"  data-toggle="collapse" data-target=".navbar-collapse"  >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li> <a ui-sref="itemList">Item List </a></li>
+                        <li> <a ui-sref="itemEdit({ECN:0})">
+                           <i class="glyphicon glyphicon-plus"></i> 
+                          Add Item   </a> </li>
+                    </ul>
+                </div>
+           </div>         
+        </nav> 
+        
+        
+            
+         
         <div ui-view></div>
      </div>
-     <!--
-     <div ng-controller="ItemsCtrl as vm"> 
-       <div class="panel panel-primary">
-          <div class="panel panel-heading" style="font-size:large" >{{vm.title}}</div>
-          <div class="panel-body">
-          <table class="table">
-              <thead>
-                  <td> <button type="button" ng-click="vm.showImage()" >image </button> </td>
-                  <td>Item Number</td>
-                  <td>Description</td>
-              </thead>
-              <tbody>
-                  <tr ng-repeat = "item in vm.items">
-                      <td> </td>
-                      <td> {{item.itemNumber}}</td>
-                      <td>{{item.itemDesc}}</td>
-                      
-                  </tr>
-              </tbody>
-           </table>   
-           </div>
-         </div>
-     </div>  ->>
+    
  </body>   
  
 
