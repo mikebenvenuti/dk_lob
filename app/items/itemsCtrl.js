@@ -14,9 +14,6 @@
          vm.showImage = function() {
              console.log('show');
          }
-         
-          
-           
     }    
         
 }());

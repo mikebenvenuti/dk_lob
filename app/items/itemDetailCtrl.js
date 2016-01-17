@@ -3,23 +3,12 @@
   
    angular
      .module("msbItems")
-     .controller("itemDetailCtrl", itemDetailCtrl);
+     .controller("itemDetailCtrl", ["item", itemDetailCtrl]);
      
-   function itemDetailCtrl(){
+   function itemDetailCtrl(item){
        
        var vm = this;
-       vm.item = {
-           "ECN":  251,
-            "itemNumber": "1.2",
-            "itemDesc": "snippet",
-            "itemVolume": "23",
-            "caseKey": 100,
-            "itemSource": "Evidence",
-            "tags": ["Known","Questioned"],
-            "imageUrl": "https://openclipart.org/download/175670/studyteeshirt.svg"     
-           
-           
-       }
+       vm.item = item;
        vm.title = "Item Detail: " + vm.item.itemDesc;
        
        if (vm.item.tags) {

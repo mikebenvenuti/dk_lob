@@ -3,11 +3,12 @@
   
    angular
      .module("msbItems")
-     .controller("itemDetailCtrl", itemDetailCtrl);
+     .controller("itemEditCtrl", itemEditCtrl);
      
-   function itemDetailCtrl(){
+   function itemEditCtrl(){
        
        var vm = this;
+       vm.title = 'Evidence Edit Area';
        
        
    }  

@@ -8,34 +8,42 @@
             var items =  [ 
             {
                 "itemNumber": "1.1",
-                "itemDesc": "swab",
+                "itemDesc": "shirt",
                 "itemVolume": "",
                 "caseKey": 100,
                 "itemSource": "Evidence",
+                "tags": ["Known","Questioned"],
+                "imageUrl": "https://openclipart.org/download/175670/studyteeshirt.svg",     
                 "ECN":  250
             },
             {
                 "itemNumber": "1.2",
-                "itemDesc": "snippet",
+                "itemDesc": "pants",
                 "itemVolume": "",
                 "caseKey": 100,
                 "itemSource": "Evidence",
+                "tags": ["Known","Questioned"],
+                "imageUrl": "https://openclipart.org/download/168770/Basic-Black-Pants.svg",
                 "ECN":  251     
             },
             {
                 "itemNumber": "3",
-                "itemDesc": "swab",
+                "itemDesc": "hat",
                 "itemVolume": "",
                 "caseKey": 100,
                 "itemSource": "Known",
+                "tags": ["Known","Questioned"],
+                "imageUrl": "https://openclipart.org/download/181578/bowler.svg",
                 "ECN":  254
             },
             {
                 "itemNumber": "2.1",
-                "itemDesc": "buccal",
-                "itemVolume": "",
+                "itemDesc": "knife",
+                "itemVolume": "1 µL",
                 "caseKey": 100,
                 "itemSource": "Evidence",
+                "tags": ["Known","Questioned"],
+                "imageUrl": "https://openclipart.org/download/83383/Pagan-Knife.svg",
                 "ECN":  255
             } ];
           
