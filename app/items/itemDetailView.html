@@ -1,0 +1,54 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        {{vm.title}}
+    </div>
+
+
+<div class="panel-body">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-md-4">Name:</div>
+                <div class="col-md-6">{{vm.item.itemDesc}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Volume:</div>
+                <div class="col-md-6">{{vm.item.itemVolume}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Item Source:</div>
+                <div class="col-md-8">{{vm.item.itemSource}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Item Source:</div>
+                <div class="col-md-6">{{vm.item.tagList}}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">ECN:</div>
+                <div class="col-md-6">{{vm.item.ECN}}</div>
+            </div>
+        </div>             
+
+
+        <div class="col-md-7">
+            <img ng-src="{{vm.item.imageUrl}}"  style="width:200px; height:200px   alt=" "
+            title="{{vm.item.itemName}}" 
+            class="center-block img-responsive">
+        </div>
+   </div>
+</div>  
+<div class="panel-footer">
+    <a ui-sref="itemList" class="btn btn-default"
+    style="width:80px"    
+    <i class="glyicon glyphicon-chevron-left"></i>
+    Back
+    </a>
+    <a ui-sref="itemList" class="btn btn-primary"
+    style="width:80px;margin-left:10px"    >
+    
+    Edit
+    </a>
+    
+</div>
+
+

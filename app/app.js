@@ -23,7 +23,11 @@
                           templateUrl: "app/items/itemEditView.html",
                           controller: "ItemsEditCtrl as vm"
                       }) 
-                    
+                      .state("itemDetail", {
+                          url: "/items/:ECN",
+                          templateUrl: "app/items/itemDetailView.html",
+                          controller: "itemDetailCtrl as vm"
+                      })
                 }]
            
           ) 
