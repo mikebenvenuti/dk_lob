@@ -1,2 +1,15 @@
-<div>  <h1>{{vm.title}} </h1></div
-<div> edit view</div>
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size: large">
+        {{vm.title}}
+     </div>
+     
+     <div class="panel-body">
+         <div class="wizard">
+             <a ui-sref=".case" ui-sref-active="active"> Case</a>
+             <a ui-sref=".name" ui-sref-active="active"> Name</a>
+             <a ui-sref=".item" ui-sref-active="active"> Item</a>
+         </div>
+         <div ui-view></div>
+     </div>
+     
+</div>

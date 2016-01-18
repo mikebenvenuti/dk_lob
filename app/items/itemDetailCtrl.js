@@ -3,21 +3,17 @@
   
    angular
      .module("msbItems")
-     .controller("itemDetailCtrl", ["item", itemDetailCtrl]);
+     .controller("itemDetailCtrl",["item",itemDetailCtrl]);
      
-   function itemDetailCtrl(item){
+   function itemDetailCtrl(items){
        
        var vm = this;
-       vm.item = item;
+       vm.item = items;
        vm.title = "Item Detail: " + vm.item.itemDesc;
        
        if (vm.item.tags) {
            vm.item.tagList = vm.item.tags.toString();
        }
-       
-       
-       
-       
    }  
 
 }());
