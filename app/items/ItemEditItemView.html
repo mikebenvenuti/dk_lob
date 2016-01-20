@@ -1,15 +1,53 @@
-<form name="itemForm">
+<form class="form-horizontal" name="itemForm">
   <fieldset>
-      <legend></legend>
-      <div>
-          <label for="inputItemName">Item Name</label>
-          <input id="inputItemName"  
-                 type="text"  placeholder="Item Name">
+      <legend> Mike's items</legend>
+      <div class="form-group">
+          <label  class="col-md-2 control-label"  for="inputItemName">Item Description</label>
+          <div class="col-md-4">   
+            <input class="form-control"
+                   id="inputItemName"  
+                   type="text"  placeholder="Item Name"
+                   ng-model="vm.item.itemDesc">
+           </div>       
       </div>
       
-      <div>
-          <label for="inputDesc">Description</label>
-          <textarea name="" id="inputDesc" rows="3"  placeholder="Description"></textarea>
+      <div class="form-group">
+          <label class="col-md-2 control-label"  for="inputDesc">Description</label>
+          <div class="col-md-10">  
+            <textarea class="form-control" id="inputDesc" rows="3"  placeholder="Description"
+                ng-model="vm.item.itemNumber"></textarea>
+          </div>
+      </div>
+      
+      
+      <div class="form-group">
+          <label class="col-md-2 control-label"  for="inputDate">Date</label>
+          <div class="col-md-4">
+              <div class="input-group">
+                  <input type="text" class="form-control"
+                         id="inputDate"
+                         uib-datepicker-popup="MMM dd, yyyy "
+                         is-open= "vm.opened"
+                         ng-model="vm.item.startDate"   />
+                  <span class="input-group-btn">
+                      <button class="btn btn-default"
+                            ng-click="vm.open($event)"    >
+                          <i class="glyphicon glyphicon-calendar"></i>
+                      </button>
+                  </span>
+              </div>  
+            
+          </div>
+      </div>
+      
+       <div class="form-group">
+          <label  class="col-md-2 control-label"  for="inputSource">Item Desc</label>
+          <div class="col-md-4">   
+            <input class="form-control"
+                   id="inputSource"
+                   ui-mask="AAA-99**"  
+                   ng-model="vm.item.itemSource">
+           </div>       
       </div>
   </fieldset>  
     
