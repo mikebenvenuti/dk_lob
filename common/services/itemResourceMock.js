@@ -74,6 +74,26 @@
              
           } );
           
+          $httpBackend.whenPOST(itemUrl).respond(function(method,url,data) {
+              var item = angular.fromJson(data);
+              
+              if (!item.ECN) {
+                  item.ECN = items[items.length-1].ECN + 1;
+                  items.push(item);
+              }
+              else {
+                  for (var i = 0; i < items.length; i++) {
+                      if (items[i].ECN == item.ECN) {
+                          items[i] = item;
+                          break;
+                      }
+                  };
+              }
+              return [200, item,{}];
+              
+          });
+          
+          
           // pass through any requests in app
           $httpBackend.whenGET(/app/).passThrough();
           
