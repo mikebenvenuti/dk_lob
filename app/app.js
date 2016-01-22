@@ -37,9 +37,9 @@
                           url: "/case",
                           templateUrl: "app/items/itemEditCaseView.html",
                       })
-                       .state("itemEdit.name", {
-                          url: "/name",
-                          templateUrl: "app/items/itemEditNameView.html",
+                       .state("itemEdit.tags", {
+                          url: "/tags",
+                          templateUrl: "app/items/itemEditTagView.html",
                       })
                        .state("itemEdit.item", {
                           url: "/item",

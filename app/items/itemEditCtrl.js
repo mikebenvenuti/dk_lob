@@ -32,6 +32,23 @@
            $state.go('itemList');
        }
        
+       vm.addTags = function (tags) {
+           if (tags) {
+               var array = tags.split(',');
+               vm.item.tags = vm.item.tags ? vm.item.tags.concat(array): array;
+               vm.newTags = "";
+           } else {
+                alert ("Please enter one or more tags");
+           }
+       }
+       
+       
+       vm.removeTag = function (idx) {
+           vm.item.tags.splic(idx,1);
+           
+           
+       }
+       
    }  
 
 }());
