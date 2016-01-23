@@ -25,8 +25,10 @@
        };
        
        vm.submit = function () {
-           console.log("save");
-           vm.item.$save();
+           
+           vm.item.$save( function (data) {
+               toastr.success("Save Successful");
+           });
        }
        vm.cancel = function () {
            $state.go('itemList');

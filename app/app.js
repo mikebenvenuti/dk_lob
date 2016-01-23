@@ -15,13 +15,13 @@
                       })
                      .state("itemList", {
                           url: "/items",
-                          templateUrl: "app/items/itemListView.html",
+                          templateUrl: "app/items/Views/itemListView.html",
                           controller: "ItemsCtrl as vm"
                       })
                       .state("itemEdit", {
                           abstract: true,
                           url: "/items/edit/:ECN",
-                          templateUrl: "app/items/itemEditView.html",
+                          templateUrl: "app/items/Views/itemEditView.html",
                           controller: "itemEditCtrl as vm",
                           resolve: {
                               itemResource: "itemResource",
@@ -35,19 +35,19 @@
                      }) 
                        .state("itemEdit.case", {
                           url: "/case",
-                          templateUrl: "app/items/itemEditCaseView.html",
+                          templateUrl: "app/items/Views/itemEditCaseView.html",
                       })
                        .state("itemEdit.tags", {
                           url: "/tags",
-                          templateUrl: "app/items/itemEditTagView.html",
+                          templateUrl: "app/items/Views/itemEditTagView.html",
                       })
                        .state("itemEdit.item", {
                           url: "/item",
-                          templateUrl: "app/items/itemEditItemView.html",
+                          templateUrl: "app/items/Views/itemEditItemView.html",
                       }) 
                       .state("itemDetail", {
                           url: "/items/:ECN",
-                          templateUrl: "app/items/itemDetailView.html",
+                          templateUrl: "app/items/Views/itemDetailView.html",
                           controller: "itemDetailCtrl as vm",
                           resolve: {
                               itemResource: "itemResource",
