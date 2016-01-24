@@ -1,3 +1,15 @@
+vm.case = [
+     {
+         "CaseNumber": "16-0001",
+         "CaseDate": "01/20/2016",
+         "Offense": "Murder",
+         "Case Officer": "Sgt Hunter"
+         
+     },{}
+    
+]
+
+
 vm.items = [ 
     {
         "itemNumber": "1.1",

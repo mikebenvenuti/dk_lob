@@ -50,11 +50,29 @@
                 "imageUrl": "https://openclipart.org/download/83383/Pagan-Knife.svg",
                 "ECN":  255
             } ];
+            
+           var cases = [
+                {
+                    "labCase": "16-0001",
+                    "CaseDate": "01/20/2016",
+                    "Offense": "Murder",
+                    "Case Officer": "Sgt Hunter",
+                    "CKEY": 100
+                    
+                }
+             ];
           
           var itemUrl = "/api/items"
+          var caseUrl = "/api/case"
           $httpBackend.whenGET(itemUrl).respond(items);
-          
+          $httpBackend.whenGET(caseUrl).respond(cases);
           var editingRegex = new RegExp(itemUrl + "/[0-9][0-9]*", '');
+          
+          $httpBackend.whenGET(caseUrl).respond( function(method,url, data) {
+              console.log('Mock:'+ cases)
+             return [200, cases, {}];   
+          });
+          
           $httpBackend.whenGET(editingRegex).respond( function(method,url, data) {
               var item = {"ECN": 0};
               var parameters = url.split('/');

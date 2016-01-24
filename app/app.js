@@ -13,6 +13,11 @@
                           url: "/",
                           templateUrl: "app/items/welcomeView.html"
                       })
+                      .state("case", {
+                          url: "/case",
+                          templateUrl: "app/items/Views/caseView.html",
+                          controller: "caseCtrl as vm",
+                      })
                      .state("itemList", {
                           url: "/items",
                           templateUrl: "app/items/Views/itemListView.html",
