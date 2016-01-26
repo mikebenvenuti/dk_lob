@@ -1,23 +1,50 @@
 <form class="form-horizontal">
-    <div class="form-group">
-        <div> {{vm.title}}</div>
+    
+    <div> {{vm.title}}</div>
         <div ng-repeat = "case in vm.cases">
            {{case.labCase}}
        </div>
+        
+    <div class="form-group">
         
         <label for="labcase" class="col-md-2 control-label">Lab Case</label>
         <div class="col-md-4"><input class="form-control" id="inputLabCase" placeholder="Lab Case"
              type="text"   ng-model="vm.cases.labCase"></div>
     </div>
-      <div class="form-group">
-        <label for="labcase" class="col-md-2 control-label">Case Officer</label>
-        <div class="col-md-4"><input class="form-control" id="inputLabCase" placeholder="Case Officer" type="text"></div>
-    </div>
-      <div class="form-group">
-        <label for="labcase" class="col-md-2 control-label">Offense Date</label>
-        <div class="col-md-4"><input class="form-control" id="inputLabCase" placeholder="Offense Date" type="text"></div>
-    </div>
     
+      <div class="form-group">
+        <label for="caseofficer" class="col-md-2 control-label">Case Officer</label>
+        <div class="col-md-4"><input class="form-control" id="caseofficer" placeholder="Case Officer" type="text"></div>
+    </div>
+    <div class="form-group"> <!--  https://angular-ui.github.io/bootstrap/   -->
+        <label for="offenseDate" class="col-md-2 control-label">Offense Date</label>
+        <div class="col-md-6">
+          <div class="input-group">
+       
+            <input class="form-control" id="offenseDate"
+                               name="inputItemDate"
+                               uib-datepicker-popup="MMM dd, yyyy "
+                               ng-model="vm.cases.offenseDate"
+                               is-open="vm.opened";
+                               placeholder="Offense Date" type="text">
+                         <span class="input-group-btn">
+                              <button class="btn btn-default"
+                                             ng-click="vm.open($event)"    >
+                               <i class="glyphicon glyphicon-calendar"></i>
+                              </button>
+                         </span>
+                </div>         
+            </div>             
+    </div>
+    <div class="form-group">
+        <label for="offense" class="col-md-2 control-label">Offense</label>
+        <div class="col-md-4"><input class="form-control" id="offense" placeholder="Offense" type="text"></div>
+    </div>
+    <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
     
    
 </form>

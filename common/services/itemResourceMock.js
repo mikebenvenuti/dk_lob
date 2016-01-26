@@ -54,7 +54,7 @@
            var cases = [
                 {
                     "labCase": "16-0001",
-                    "CaseDate": "01/20/2016",
+                    "offenseDate": "01/20/2016",
                     "Offense": "Murder",
                     "Case Officer": "Sgt Hunter",
                     "CKEY": 100
