@@ -5,10 +5,17 @@
 <div class="col-md-2">   
     <button class="btn btn-primary btn-lg btn-block">Search </button>
     <a ui-sref="itemList"> <button class="btn btn-primary btn-lg btn-block">Config </button></a>
-    <a ui-sref="itemList"> <button class="btn btn-primary btn-lg btn-block dropdown-menu" >DNA </button>  </a>
+    <a ui-sref="itemList"> <button class="btn btn-primary btn-lg btn-block"" >DNA </button>  </a>
     
      <a ui-sref="itemEdit.case({ECN: 0})" class="btn btn-primary btn-lg btn-block"> Case  </a>
 </div>
 
+
+
 <div class="col-md-10"> 
+    <label>Birthday: <input kendo-date-picker /></label>
+    <label> Qty <input kendo-numerictextbox k-min="1" k-max="10" k-up-arrow-text="'Increment'" k-down-arrow-text="'Decrement'"></label>
+     <br>
+     <label>Month: <input kendo-date-picker    k-options='{start:"year",depth:"year"}'   k-format="'MMMM yyyy'"  /></label>
+     
     </div>

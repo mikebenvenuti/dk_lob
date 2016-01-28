@@ -2,7 +2,7 @@
     "use strict";
     
     var app = angular
-       .module("msbItems", ["common.services","itemResourceMock", "ui.mask", "ui.bootstrap","ui.router"]);
+       .module("msbItems", ["common.services","itemResourceMock", "ui.mask", "ui.bootstrap","ui.router", "kendo.directives"]);
        app.config(["$stateProvider",
                 "$urlRouterProvider", 
            function($stateProvider, $urlRouterProvider) {
