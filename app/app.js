@@ -11,12 +11,13 @@
                     $stateProvider
                       .state("home", {
                           url: "/",
-                          templateUrl: "app/items/welcomeView.html"
+                          templateUrl: "app/items/welcomeView.html",
+                          controller: "welcomeCtrl as vm"
                       })
                       .state("case", {
                           url: "/case",
                           templateUrl: "app/items/Views/caseView.html",
-                          controller: "caseCtrl as vm",
+                          controller: "caseCtrl as vm"
                       })
                      .state("itemList", {
                           url: "/items",
