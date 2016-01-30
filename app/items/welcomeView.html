@@ -1,14 +1,14 @@
 <div class="panel panel-primary text center">
-    <div class="panel-heading" style="font-size:x-large ">  MSB Inc</div>
-    <img src="images/msb.png" style="" />
-    <h4>{{vm.title}}</h4>
+    <div  class="panel-heading" style="font-size:x-large ">  MSB Inc</div>
+    <img    src="images/msb.png" style="" />
+    <h4   style="width: 150px;margin-left:auto;margin-right:auto ">{{vm.title}}</h4>
 </div>
 <div class="col-md-2">   
-    <button class="btn btn-primary btn-lg btn-block">Search </button>
+    <a ui-sref="search"> <button class="btn btn-primary btn-lg btn-block">Search </button> </a>
     <a ui-sref="itemList"> <button class="btn btn-primary btn-lg btn-block">Config </button></a>
     <a ui-sref="itemList"> <button class="btn btn-primary btn-lg btn-block"" >DNA </button>  </a>
-    
      <a ui-sref="itemEdit.case({ECN: 0})" class="btn btn-primary btn-lg btn-block"> Case  </a>
+     <button id="button" type="button">Cancel</button>
 </div>
 
 

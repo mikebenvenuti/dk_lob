@@ -19,6 +19,10 @@
                           templateUrl: "app/items/Views/caseView.html",
                           controller: "caseCtrl as vm"
                       })
+                      .state("search", {
+                          url: "/search",
+                          templateUrl: "app/items/Views/Search.html"
+                      })
                      .state("itemList", {
                           url: "/items",
                           templateUrl: "app/items/Views/itemListView.html",
