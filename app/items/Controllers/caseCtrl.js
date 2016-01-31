@@ -8,18 +8,40 @@
    function caseCtrl(caseResource){
        
        var vm = this;
-         caseResource.query(function(data) {
-           vm.cases = data;  
-           console.log('case' + vm.cases.labCase);
-         });
-         vm.title = "The Main Case Page";
+       
+       vm.labCases = [];
+       caseResource.query(function(data) {
+       vm.cases = data;  
          
-        vm.open = function ($event) {
+       //  store all cases in vm.labCases
+       //  for (var index = 0; index < vm.cases.length; ++index) {
+       //    vm.labCases.push(vm.cases[index].labCase);
+       //    console.log('for loop: ' + vm.cases[index].labCase )
+       //  }
+       // or   
+       vm.cases.forEach(function(entry) {
+           vm.labCases.push(entry.labCase);
+       })
+         
+         
+         
+         
+       });
+       
+       vm.title = "The Main Case Page";
+         
+       vm.open = function ($event) {
            $event.preventDefault();
            $event.stopPropagation();
            
            vm.opened = !vm.opened;
        };
+              
+        
+        
+        
+        
+        
        
        
    }  

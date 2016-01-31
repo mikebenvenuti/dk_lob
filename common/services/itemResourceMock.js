@@ -29,10 +29,10 @@
                 "ECN":  251     
             },
             {
-                "itemNumber": "3",
+                "itemNumber": "1",
                 "itemDesc": "hat",
                 "itemVolume": "",
-                "caseKey": 100,
+                "caseKey": 101,
                 "startDate": '1/1/2016',
                 "itemSource": "Known",
                 "tags": ["Known","Questioned"],
@@ -40,10 +40,10 @@
                 "ECN":  254
             },
             {
-                "itemNumber": "2.1",
+                "itemNumber": "2",
                 "itemDesc": "knife",
                 "itemVolume": "1 µL",
-                "caseKey": 100,
+                "caseKey": 101,
                 "startDate": '1/1/2016',
                 "itemSource": "Evidence",
                 "tags": ["Known","Questioned"],
@@ -58,21 +58,32 @@
                     "Offense": "Murder",
                     "Case Officer": "Sgt Hunter",
                     "CKEY": 100
-                    
+                },
+                       {
+                    "labCase": "16-0002",
+                    "offenseDate": "01/21/2016",
+                    "Offense": "Theft",
+                    "Case Officer": "Sgt Magnum",
+                    "CKEY": 101
                 }
              ];
           
           var itemUrl = "/api/items"
           var caseUrl = "/api/case"
+          var caseItemsUrl = "/api/caseitem"
           $httpBackend.whenGET(itemUrl).respond(items);
           $httpBackend.whenGET(caseUrl).respond(cases);
+          $httpBackend.whenGET(caseItemsUrl).respond(items);
           var editingRegex = new RegExp(itemUrl + "/[0-9][0-9]*", '');
+          var caseMask = new RegExp(caseItemsUrl + "/[0-9][0-9]*", '');
           
           $httpBackend.whenGET(caseUrl).respond( function(method,url, data) {
               console.log('Mock:'+ cases)
              return [200, cases, {}];   
           });
           
+          
+                    
           $httpBackend.whenGET(editingRegex).respond( function(method,url, data) {
               var item = {"ECN": 0};
               var parameters = url.split('/');
@@ -84,6 +95,26 @@
                     for (var i = 0; i < items.length; i++) {
                         if (items[i].ECN == ecn) {
                             item = items[i];
+                            break;
+                        }
+                    };
+              }
+              return [200, item, {}];      
+             
+          } );
+          
+          $httpBackend.whenGET(caseMask).respond( function(method,url, data) {
+              var item = {"CKEY": 0};
+              var parameters = url.split('/');
+              // split the url;  the case key will be at the end of the paramater array 
+              var length = parameters.length;
+              var ckey = parameters[length - 1];
+              // look for the caseKey in items
+              if (ckey> 0 ) {
+                    for (var i = 0; i < items.length; i++) {
+                        if (items[i].caseKey == ckey) {
+                            item = items[i];
+                            console.log (  items[i].caseKey + ' ' + ckey);
                             break;
                         }
                     };

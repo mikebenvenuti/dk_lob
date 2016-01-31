@@ -1,27 +1,33 @@
+  
 <div class="col-md-8">
    
         <div class="panel panel-primary" style="font-size:large; width:500px">
             <div class="panel panel-heading" style="font-size:large ">
             Pick a Case    
             </div>
-            <input kendo-auto-complete ng-model="name" k-data-source="vm.names" style="width: 40%;" /> 
+             
             <div class="panel-body">
+                 
+                Search: <input kendo-auto-complete ng-model="case" k-data-source="vm.labCases" style="width: 40%;" /></br>
+                </br>
                 
-                <a href=""> 10-1234 </a>
-                
+                <div ng-repeat = "case in vm.cases">
+                   <a ui-sref="caseDetail({CKEY: case.CKEY})">{{case.labCase}} {{case.CKEY}}</a>
+
+                </div>
             </div>   
         </div>    
-        
-        
+         
+      <!-- caseDetail({CKEY: {{case.CKEY}} })  -->  
    
 </div>
 
  <div class="col-md-4">
  
  
- <div class="panel panel-primary" style="font-size:large; width:200px">
+ <div class="panel panel-primary" style="font-size:large; width:210px">
     <div class="panel panel-heading" style="font-size:large ">
-       Pick a Department
+       Departments
     </div>
     
     <div class="panel-body">
@@ -29,8 +35,9 @@
         <div><div><a href=""> Baltimore </a></div>
         <div><a href=""> Austin </a></div>
         <div><a href=""> Chicago DNA Lab </a></div>
-        <div><a href=""> Anne Arundel CODIS Lab </a></div>
-        <div><a href=""> Washoe Forensic Lab </a></div>
+        <div><a href=""> Anne Arundel Lab </a></div>
+        <div><a href=""> Washoe Forensic Lab</a></div>
+        <div><a href=""> Iowa CODIS Lab </a></div>
      </div>   
  </div>    
  

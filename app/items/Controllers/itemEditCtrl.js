@@ -46,7 +46,7 @@
        
        
        vm.removeTag = function (idx) {
-           vm.item.tags.splic(idx,1);
+           vm.item.tags.splice(idx,1);
            
            
        }

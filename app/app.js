@@ -21,7 +21,13 @@
                       })
                       .state("search", {
                           url: "/search",
-                          templateUrl: "app/items/Views/Search.html"
+                          templateUrl: "app/items/Views/Search.html",
+                          controller: "caseCtrl as vm"
+                      })
+                      .state("config", {
+                          url: "/config",
+                          templateUrl: "app/items/Views/configView.html",
+                          controller: "welcomeCtrl as vm"
                       })
                      .state("itemList", {
                           url: "/items",
@@ -43,7 +49,7 @@
                               }
                           }
                      }) 
-                       .state("itemEdit.case", {
+                    .state("itemEdit.case", {
                           url: "/case",
                           templateUrl: "app/items/Views/itemEditCaseView.html",
                       })
@@ -70,6 +76,22 @@
                           }
                           
                       })
+                      .state("caseDetail", {
+                          url: "/caseitem/:CKEY",
+                          templateUrl: "app/items/Views/itembyCase.html",
+                          controller: "caseItemCtrl as vm",
+                          resolve: {
+                              caseItemResource: "caseItemResource",
+                              
+                              item: function ( caseItemResource, $stateParams) {
+                                  var iCKEY = $stateParams.CKEY;
+                                  return caseItemResource.get(
+                                      {CKEY: iCKEY}).$promise;
+                              }
+                          }
+                          
+                      }) 
+                      
                 }]
            
           ) 
