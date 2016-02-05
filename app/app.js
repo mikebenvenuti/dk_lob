@@ -85,7 +85,7 @@
                               
                               item: function ( caseItemResource, $stateParams) {
                                   var iCKEY = $stateParams.CKEY;
-                                  return caseItemResource.get(
+                                  return caseItemResource.query(
                                       {CKEY: iCKEY}).$promise;
                               }
                           }

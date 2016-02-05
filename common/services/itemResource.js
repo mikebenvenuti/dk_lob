@@ -12,6 +12,7 @@
        }
     
       function caseItemResource($resource) {
+          console.log('set Mock data');
            return $resource("/api/caseitem/:CKEY")
        }   
     

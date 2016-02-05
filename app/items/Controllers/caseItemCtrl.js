@@ -2,18 +2,23 @@
     "use strict";
     angular
         .module("msbItems")
-        .controller("caseItemCtrl", ["caseItemResource", caseItemCtrl]);
+        .controller("caseItemCtrl", ["item","caseItemResource","$state", caseItemCtrl]);
         
-    function caseItemCtrl(itemResource) {
+    
+        
+        
+    function caseItemCtrl(item,caseItemResource,$state,$scope ) {
          var vm = this;
          
-         itemResource.query(function(data) {
-           vm.items = data;  
-         });
+         vm.items = item;
+         console.log('item' + vm.items.itemNumber);
+         
          vm.title = "Case Items";
          vm.showImage = function() {
              console.log('show');
          }
+        
+        
     }    
         
 }());

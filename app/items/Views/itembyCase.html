@@ -6,12 +6,12 @@
           <div class="panel-body">
           <table class="table">
               <thead>
-                  <td>Item Number</td>
+                  <td> Item Number</td>
                   <td>Description</td>
               </thead>
               <tbody>
                   <tr ng-repeat = "item in vm.items">
-                      <td>  <a ui-sref="itemDetail({ECN: item.ECN})">  {{item.itemNumber}}</td> </a>
+                      <td>  <a ui-sref="itemDetail({ECN: item.ECN})">  {{item.itemNumber}}  </a></td> 
                       <td> {{item.itemDesc}}</td>
                       <td> 
                           <a ui-sref="itemEdit.case({ECN: item.ECN})" class="btn btn-primary"> Edit</a> 

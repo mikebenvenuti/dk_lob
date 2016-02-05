@@ -10,6 +10,8 @@
        var vm = this;
        vm.item = items;
        
+       console.log('itemsEdit Ctrl' + items);
+       
        if (vm.item && vm.item.ECN) {
            vm.title = "Edit: " + vm.item.itemDesc;
        }

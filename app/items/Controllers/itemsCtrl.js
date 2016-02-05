@@ -6,7 +6,7 @@
         
     function ItemsCtrl(itemResource) {
          var vm = this;
-         
+         console.log('itemsCtrl: itemResource');
          itemResource.query(function(data) {
            vm.items = data;  
          });

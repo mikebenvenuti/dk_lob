@@ -67,13 +67,18 @@
                     "CKEY": 101
                 }
              ];
-          
+          console.log('Mock data');
           var itemUrl = "/api/items"
           var caseUrl = "/api/case"
           var caseItemsUrl = "/api/caseitem"
-          $httpBackend.whenGET(itemUrl).respond(items);
+          $httpBackend.whenGET(itemUrl).respond(function(method, url, data) {
+               console.log(url);
+                return [200, items, {}];   
+          } 
+             
+             );
           $httpBackend.whenGET(caseUrl).respond(cases);
-          $httpBackend.whenGET(caseItemsUrl).respond(items);
+       
           var editingRegex = new RegExp(itemUrl + "/[0-9][0-9]*", '');
           var caseMask = new RegExp(caseItemsUrl + "/[0-9][0-9]*", '');
           
@@ -99,30 +104,38 @@
                         }
                     };
               }
+              console.log(url);
               return [200, item, {}];      
              
           } );
           
           $httpBackend.whenGET(caseMask).respond( function(method,url, data) {
-              var item = {"CKEY": 0};
+              var JsonStr = {"caseKey": 0, "ECN": 0};
+              var caseitems = [];
               var parameters = url.split('/');
               // split the url;  the case key will be at the end of the paramater array 
               var length = parameters.length;
               var ckey = parameters[length - 1];
               // look for the caseKey in items
               if (ckey> 0 ) {
-                    for (var i = 0; i < items.length; i++) {
-                        if (items[i].caseKey == ckey) {
-                            item = items[i];
-                            console.log (  items[i].caseKey + ' ' + ckey);
-                            break;
-                        }
-                    };
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].caseKey == ckey) {
+                       // JsonStr = JSON.stringify(items[i]);
+                        caseitems.push(items[i]);
+                    
+                    }
+                };
               }
-              return [200, item, {}];      
+              console.log(url);
+              
+              return [200, caseitems, {}];      
              
           } );
-          
+          $httpBackend.whenGET(caseItemsUrl).respond(function(method,url, data) {
+              console.log(url)
+              return [200, items, {}];      
+             
+          });
           $httpBackend.whenPOST(itemUrl).respond(function(method,url,data) {
               var item = angular.fromJson(data);
               
