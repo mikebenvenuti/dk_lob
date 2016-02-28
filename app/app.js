@@ -3,6 +3,76 @@
     
     var app = angular
        .module("msbItems", ["common.services","itemResourceMock", "ui.mask", "ui.bootstrap","ui.router", "kendo.directives"]);
+       app.run( 
+           
+           
+            function test($timeout,$q) {
+                
+                   var getmessages = function(callback) {
+                       $timeout(function() {
+                           callback(['mike','roxane']);
+                           }, 1000);
+                       };
+                       
+                    var getpromises = function() {
+                        var deferred = $q.defer();
+                        
+                       $timeout(function() {
+                           deferred.resolve( ['mike2','roxane2']);
+                           }, 6000);
+                        return deferred.promise;   
+                       };   
+                       
+                       
+                   
+                       
+                    getmessages(function(x) {
+                        console.log(x);
+                    } );   
+                    
+                   getpromises().then(function(x) {
+                        console.log(x);
+                    } );
+            
+                   
+            
+                       
+                   
+                    getGoodData().then(
+                         function resolveit(value) {
+                             console.log('successfull',value);
+                         }
+                    );  
+                 
+                 getBadData().then(
+                         function rejectit(value) {
+                             console.log('Failed!',value);
+                         }
+                    );
+                 
+                 function getGoodData() {
+                     
+                     var promise = $timeout(3000, angular.noop)
+                       .then(
+                           function resolveit() {
+                               return("yesss!");
+                           }
+                       );
+                     return(promise);
+                 }
+                 
+                   function getBadData() {
+                     
+                     var promise = $timeout(5000, angular.noop)
+                       .then(
+                           function rejectit() {
+                               return("Nooo!");
+                           }
+                       );
+                     return(promise);
+                 }
+            }  
+       ) 
        app.config(["$stateProvider",
                 "$urlRouterProvider", 
            function($stateProvider, $urlRouterProvider) {
